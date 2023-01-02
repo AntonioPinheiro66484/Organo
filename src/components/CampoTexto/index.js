@@ -7,7 +7,8 @@ const CampoTexto = (props)=>{
             <label>
                 {props.label}
             </label>
-            <input placeholder={placeholderModificada}/>
+            {/* required={props.obrigatorio} significa que o campo é obrigatorio quando a resposta for true */}
+            <input required={props.obrigatorio} placeholder={placeholderModificada}/>
         </div>
     )
 }
