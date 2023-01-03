@@ -1,6 +1,12 @@
 import './CampoTexto.css'
+
 const CampoTexto = (props)=>{
     const placeholderModificada = `${props.placeholder}...`
+    
+    const aoDigitado = (evento) => {
+        props.aoAlterado(evento.target.value)
+    }
+
     return(
         
         <div className="campoTexto">
@@ -8,7 +14,7 @@ const CampoTexto = (props)=>{
                 {props.label}
             </label>
             {/* required={props.obrigatorio} significa que o campo é obrigatorio quando a resposta for true */}
-            <input required={props.obrigatorio} placeholder={placeholderModificada}/>
+            <input value={props.valor} onChange={aoDigitado} required={props.obrigatorio} placeholder={placeholderModificada}/>
         </div>
     )
 }
